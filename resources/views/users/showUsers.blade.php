@@ -9,7 +9,7 @@
                     {{ Session::get('success') }}
                 </div>
             @endif
-            <a href="{{ route('user.create') }}" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Create New User</a>
+            <a href="{{ url('/register') }}" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Create New User</a>
             <br><hr>
         </div>
         <div class="row">

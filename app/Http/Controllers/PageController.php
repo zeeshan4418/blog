@@ -10,7 +10,7 @@ class PageController extends Controller
 {
     public function getHome(){
 
-        return view('main');
+        return view('main-page');
     }
     public function getAbout(){
 

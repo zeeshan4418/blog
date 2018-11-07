@@ -30,8 +30,11 @@ Route::get('/user/update/{id}', 'UserController@editUser');*/
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
 Route::get('user/{id}', 'UserController@destroy');
+/*Route::get('user/create', 'UserController@create');*/
 Route::get('user/profile/{id}', 'UserController@show');
 Route::get('user/{id}/edit', 'UserController@edit');
 Route::post('user/update/{id}','UserController@update');
 Route::resource('user', 'UserController');
+Route::get('/login', 'AuthController@index');
