@@ -1,5 +1,34 @@
 @extends('layout.app')
-<style>
+<style class="cp-pen-styles">
+    #carousel3d .carousel-3d-slide {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #fff;
+        padding: 10px;
+        -webkit-transition: all .4s;
+        transition: all .4s;
+    }
+    #carousel3d .carousel-3d-slide.current {
+        background-color: #333;
+        color: #fff;
+    }
+    #carousel3d .carousel-3d-slide.current span {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
     #main-baner{
         background: url({{ URL::asset('img/banner.jpg')}}) no-repeat 0px 0px;
         background-size: cover;
@@ -106,7 +135,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-laptop"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg"> Electronics & Appliances</h4>
                         </div>
                     </div>
                 </a>
@@ -118,7 +147,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-car"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Cars</h4>
                         </div>
                     </div>
                 </a>
@@ -130,7 +159,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-motorcycle"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Bikes</h4>
                         </div>
                     </div>
                 </a>
@@ -142,7 +171,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-wheelchair"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Furnitures</h4>
                         </div>
                     </div>
                 </a>
@@ -154,7 +183,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-paw"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Pets</h4>
                         </div>
                     </div>
                 </a>
@@ -166,7 +195,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-book"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Books, Sports, and Hobbies</h4>
                         </div>
                     </div>
                 </a>
@@ -178,7 +207,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-asterisk"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Fashion</h4>
                         </div>
                     </div>
                 </a>
@@ -190,7 +219,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-gamepad"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Kids</h4>
                         </div>
                     </div>
                 </a>
@@ -202,7 +231,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-shield"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Services</h4>
                         </div>
                     </div>
                 </a>
@@ -214,7 +243,7 @@
                             <div class="focus-image">
                                 <i class="fa fa-at"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Jobs</h4>
                         </div>
                     </div>
                 </a>
@@ -226,10 +255,51 @@
                             <div class="focus-image">
                                 <i class="fa fa-home"></i>
                             </div>
-                            <h4 class="clrchg">Mobiles</h4>
+                            <h4 class="clrchg">Real Estate</h4>
                         </div>
                     </div>
                 </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="padding: 50px 0px 0px 50px">
+            <h2 class="text-center text-info">Trending Ads</h2>
+        </div>
+        <div class="row">
+            <div id="carousel3d">
+                <carousel-3d :perspective="0" :space="200" :display="5" :controls-visible="true" :controls-prev-html="'❬'" :controls-next-html="'❭'" :controls-width="30" :controls-height="60" :clickable="true" :autoplay="true" :autoplay-timeout="5000">
+                    <slide :index="0">
+                        <span class="title">Web Development</span>
+                        <a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Click Here</a>
+                    </slide>
+                    <slide :index="1">
+
+                        <span class="title">Web Design</span>
+                        <a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Click Here</a>
+                    </slide>
+                    <slide :index="2">
+                        <span class="title">You know</span>
+                        <a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Click Here</a>
+                    </slide>
+                    <slide :index="3">
+                        <span class="title">You know</span>
+                        <a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Click Here</a>
+                    </slide>
+                    <slide :index="4">
+                        <span class="title">You know</span>
+                        <a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Click Here</a>
+                    </slide>
+                    <slide :index="5">
+                        <span class="title">You know</span>
+                        <a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Click Here</a>
+                    </slide>
+                    <slide :index="6">
+                        <span class="title">You know</span>
+                        <a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Click Here</a>
+                    </slide>
+
+                </carousel-3d>
             </div>
         </div>
     </div>

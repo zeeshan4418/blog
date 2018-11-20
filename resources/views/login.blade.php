@@ -20,6 +20,11 @@
 <section class="login-block">
     <div class="container login-container">
         <div class="row login-col">
+            @if(Session::has('success'))
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
             <div class="col-md-4">
                 <h3 class="text-center text-capitalize label-name">Login</h3>
                 <form class="login-form">
