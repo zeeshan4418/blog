@@ -367,6 +367,7 @@ class ComposerStaticInit2f169974bf5877ee2c07463237c1534c
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+        'CreateAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2018_11_24_052020_create_admins_table.php',
         'CreateCitiesTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_02_061318_create_cities_table.php',
         'CreateCountriesTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_02_063407_create_countries_table.php',
         'CreateMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2018_11_13_062351_create_messages_table.php',

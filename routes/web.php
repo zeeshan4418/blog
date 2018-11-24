@@ -10,15 +10,7 @@ Route::post('/getCities', 'UserController@getCities');
 Route::post('/register', 'UserController@create');
 Route::post('/contact/submit','MessageController@submit');
 Route::get('/messages','MessageController@index');
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-/*Route::get('/users/show', 'UserController@getUsers');
-Route::get('/user/delete/{id}', 'UserController@deleteUser');
-Route::get('/user/update/{id}', 'UserController@editUser');*/
-Route::get('/welcome', function () {
-    return view('welcome');
-});
 
 Route::get('user/{id}', 'UserController@destroy');
 /*Route::get('user/create', 'UserController@create');*/
@@ -29,7 +21,23 @@ Route::resource('user', 'UserController');
 Route::get('/login', 'AuthController@index');
 Route::get('/signup', 'SignUpController@index');
 Route::post('/signup','SignUpController@create');
+Route::get('/admin', 'AdminController@index');
+Route::post('/login','AuthController@doLogin');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+/*Route::get('/users/show', 'UserController@getUsers');
+Route::get('/user/delete/{id}', 'UserController@deleteUser');
+Route::get('/user/update/{id}', 'UserController@editUser');*/
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+/*Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');*/

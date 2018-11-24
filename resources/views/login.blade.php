@@ -27,14 +27,15 @@
             @endif
             <div class="col-md-4">
                 <h3 class="text-center text-capitalize label-name">Login</h3>
-                <form class="login-form">
+                <form class="login-form" action="{{url('/login')}}" method="post">
+                    {{ csrf_field() }}
                     <div class="form-group">
-                        <label class="text-capitalize label-name">User Name</label>
-                        <input type="text" class="form-control" placeholder="">
+                        <label class="text-capitalize label-name">Email</label>
+                        <input name="email" type="text" class="form-control" placeholder="Enter Email">
                     </div>
                     <div class="form-group">
                         <label class="text-capitalize label-name">Password</label>
-                        <input type="password" class="form-control" placeholder="">
+                        <input name="password" type="password" class="form-control" placeholder="Enter Password">
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-primary">Submit</button>

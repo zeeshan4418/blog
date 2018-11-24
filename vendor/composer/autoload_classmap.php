@@ -52,6 +52,7 @@ return array(
     'Collective\\Html\\HtmlBuilder' => $vendorDir . '/laravelcollective/html/src/HtmlBuilder.php',
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
+    'CreateAdminsTable' => $baseDir . '/database/migrations/2018_11_24_052020_create_admins_table.php',
     'CreateCitiesTable' => $baseDir . '/database/migrations/2018_10_02_061318_create_cities_table.php',
     'CreateCountriesTable' => $baseDir . '/database/migrations/2018_10_02_063407_create_countries_table.php',
     'CreateMessagesTable' => $baseDir . '/database/migrations/2018_11_13_062351_create_messages_table.php',
