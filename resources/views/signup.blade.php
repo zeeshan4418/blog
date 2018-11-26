@@ -24,29 +24,38 @@
                     <h3 class="text-center text-capitalize label-name">Sign Up</h3>
                     {!! Form::open(['url' => '/signup', 'method' => 'POST','class' => "login-form"]) !!}
                         <div class="form-group">
-                            <label class="text-capitalize label-name">User Name</label>
-                            <input type="text" name="user_name" class="form-control" placeholder="Enter User Name">
+                            <label class="text-capitalize label-name">Job Title</label>
+                            <input type="text" name="job_title" class="form-control" placeholder="Enter job title">
                             <p class="text-danger">
-                                @if($errors->has('user_name'))
-                                    {{ $errors->first('user_name') }}
+                                @if($errors->has('job_title'))
+                                    {{ $errors->first('job_title') }}
+                                @endif
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-capitalize label-name">User Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Enter User Name">
+                            <p class="text-danger">
+                                @if($errors->has('name'))
+                                    {{ $errors->first('name') }}
                                 @endif
                             </p>
                         </div>
                         <div class="form-group">
                             <label class="text-capitalize label-name">Email</label>
-                            <input type="text" name="user_email" class="form-control" placeholder="Enter Email">
+                            <input type="text" name="email" class="form-control" placeholder="Enter Email">
                             <p class="text-danger">
-                                @if($errors->has('user_email'))
-                                    {{ $errors->first('user_email') }}
+                                @if($errors->has('email'))
+                                    {{ $errors->first('email') }}
                                 @endif
                             </p>
                         </div>
                         <div class="form-group">
                             <label class="text-capitalize label-name">Password</label>
-                            <input type="password" name="user_password" class="form-control" placeholder="Enter Password">
+                            <input type="password" name="password" class="form-control" placeholder="Enter Password">
                             <p class="text-danger">
-                                @if($errors->has('user_password'))
-                                    {{ $errors->first('user_password') }}
+                                @if($errors->has('password'))
+                                    {{ $errors->first('password') }}
                                 @endif
                             </p>
                         </div>

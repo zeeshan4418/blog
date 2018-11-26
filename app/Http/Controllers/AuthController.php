@@ -15,6 +15,11 @@ class AuthController extends Controller
         $this->middleware('auth:admin');
     }
 
+    public function index()
+    {
+        return view('login');
+    }
+
     public function doLogin(Request $request)
     {
         // validate the info, create rules for the inputs
@@ -28,7 +33,7 @@ class AuthController extends Controller
 
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
-            return Redirect::to('login')
+            return redirect()->route('login')
                 ->withErrors($validator) // send back all errors to the login form
                 ->withInput($request->except('password')); // send back the input (not the password) so that we can repopulate the form
         } else {
@@ -40,8 +45,8 @@ class AuthController extends Controller
             );
 
 
-            Auth::guard('admin')->check($userdata);
 
+            //Auth::guard('admin');
 
             // attempt to do the login
             //if (Auth::attempt($userdata)) {
@@ -55,16 +60,12 @@ class AuthController extends Controller
             } else {
 
                 // validation not successful, send back to form
-                return Redirect::to('login');
+                echo "login Failed";
+                //return Redirect::to('/login');
 
             }
 
         }
-    }
-
-    public function index()
-    {
-        return view('Login');
     }
 
 }

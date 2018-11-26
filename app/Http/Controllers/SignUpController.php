@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SignUp;
+use App\Admin;
+use App\Http\Requests\AdminCreate;
 
 class SignUpController extends Controller
 {
@@ -11,11 +12,10 @@ class SignUpController extends Controller
         return view('signup');
     }
 
-    public function create(SignUp $signUp)
+    public function create(AdminCreate $signUp)
     {
         $data = $signUp->except(['_token','confirmPassword']);
-        \App\SignUp::create($data);
-
+        Admin::create($data);
         return redirect('/login')->with(['success','Sign Up Successfully']);
     }
 

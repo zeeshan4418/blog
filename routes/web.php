@@ -23,8 +23,9 @@ Route::get('/signup', 'SignUpController@index');
 Route::post('/signup','SignUpController@create');
 Route::get('/admin', 'AdminController@index');
 Route::post('/login','AuthController@doLogin');
+//Route::post('/login', 'AuthController@doLogin')->name('login');
 
-
+Route::resource('user', 'UserController');
 
 /*Route::get('/users/show', 'UserController@getUsers');
 Route::get('/user/delete/{id}', 'UserController@deleteUser');
