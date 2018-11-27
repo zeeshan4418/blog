@@ -26,7 +26,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ url("/login") }}">Login</a></li>
-                <li><a href="{{ url("/signup") }}">Sign Up</a></li>
+                <li><a href="{{ url("/register") }}">Register</a></li>
                 <li><a href="{{ url('/messages') }}"><span class="fa fa-badge">Message</span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
