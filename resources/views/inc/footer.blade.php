@@ -2,7 +2,6 @@
     <p>Copyright 2018 &copy; Acme</p>
 </footer>
 </body>
-@yield('js')
 <!-- Scripts -->
 <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
@@ -22,4 +21,5 @@
     })
     //# sourceURL=pen.js
 </script>
+@yield('js')
 </html>

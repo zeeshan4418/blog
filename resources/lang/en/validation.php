@@ -103,6 +103,49 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'email' => [
+            'required' => 'Email is Required',
+        ],
+        'first_name' => [
+            'required' => 'First Name is Required',
+        ],
+        'last_name' => [
+            'required' => 'Last Name is Required',
+        ],
+        'father_name' => [
+            'required' => 'Father Name is Required',
+        ],
+        'cnic_no' => [
+            'required' => 'CNIC is Required',
+        ],
+        'mobile_no' => [
+            'required' => 'Mobile No is Required',
+        ],
+        'date_of_birth' => [
+            'required' => 'DOB is Required',
+        ],
+        'gender' => [
+            'required' => 'Gender is Required',
+        ],
+        'country_id' => [
+            'required' => 'Country is Required',
+        ],
+        'state_id' => [
+            'required' => 'Province is Required',
+        ],
+        'city_id' => [
+            'required' => 'City is Required',
+        ],
+        'address' => [
+            'required' => 'Address is Required',
+        ],
+        'password' => [
+            'required' => 'Password is Required',
+        ],
+        'confirmPassword' => [
+            'required' => 'Confirm Password is Required',
+        ],
+
     ],
 
     /*

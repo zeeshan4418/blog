@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-md-7">
-                    {!! Form::open(['url' => '/user', 'method' => 'POST']) !!}
+                    {!! Form::open(['url' => '/register', 'method' => 'POST']) !!}
                     <div class="row">
                         <div class="col-md-offset-1 col-md-10">
                             @if(Session::has('success'))
@@ -149,7 +149,7 @@
                                     <div class="form-group">
                                         <label class="label-name">Gender</label>
                                         <select class="form-control" name="gender">
-                                            <option>Select</option>
+                                            <option value="">Select</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
                                         </select>
@@ -177,7 +177,7 @@
                                     <div class="form-group">
                                         <label class="label-name">Select Country</label>
                                         <select id="country_id" name="country_id" class="form-control">
-                                            <option>Select</option>
+                                            <option value="">Select</option>
                                             @foreach($country as $cn)
                                                 <option value="{{ $cn['country_id'] }}">{{ $cn['country_name'] }}</option>
                                             @endforeach
@@ -193,7 +193,7 @@
                                     <div class="form-group">
                                         <label class="label-name">Select Province</label>
                                         <select id="state_id" name="state_id" class="form-control">
-                                            <option>Select</option>
+                                            <option value="">Select</option>
                                         </select>
                                     </div>
                                     <p class="text-danger">
@@ -206,7 +206,7 @@
                                     <div class="form-group">
                                         <label class="label-name">Select City</label>
                                         <select id="city_id" name="city_id" class="form-control">
-                                            <option>Select</option>
+                                            <option value="">Select</option>
                                         </select>
                                     </div>
                                     <p class="text-danger">
@@ -509,6 +509,7 @@
         });
         var row_div = "";
         $("#country_id").on('change',function(){
+
             var id = $("#country_id").val();
             $.ajaxSetup({
                 headers: {
@@ -516,7 +517,7 @@
                 }
             });
             $("#state_id").html("");
-            row_div = "<option>Select<option>";
+            row_div = "<option value=''>Select</option>";
             $.ajax({
                 type: "POST",
                 url: "{{ url('/getStates') }}",
@@ -533,6 +534,7 @@
                     $("#state_id").html(row_div);
                 }
             })
+
         });
 
         $("#state_id").on('change',function(){
@@ -543,7 +545,7 @@
                 }
             });
             $("#city_id").html("");
-            row_div = "<option>Select<option>";
+            row_div = "<option value=''>Select</option>";
             $.ajax({
                 type: "POST",
                 url: "{{ url('/getCities') }}",

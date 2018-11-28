@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\country;
+use App\Http\Requests\UserCreate;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -47,10 +49,28 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        /*return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+        ]);*/
+
+
+        return Validator::make($data, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'father_name' => 'required',
+            'cnic_no' => 'required|unique:users',
+            'mobile_no' => 'required',
+            'date_of_birth' => 'required',
+            'gender' => 'required',
+            'country_id' => 'required',
+            'state_id' => 'required',
+            'city_id' => 'required',
+            'address' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required',
+            'confirmPassword' => 'required|same:password'
         ]);
     }
 
@@ -63,9 +83,45 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' =>  $data['last_name'],
+            'father_name'   =>  $data['father_name'],
+            'cnic_no' => $data['cnic_no'],
+            'mobile_no' => $data['mobile_no'],
+            'date_of_birth' => $data['date_of_birth'],
+            'gender' => $data['gender'],
+            'religion' => $data['religion'],
+            'country_id' => $data['country_id'],
+            'state_id' => $data['state_id'],
+            'city_id' => $data['city_id'],
+            'address' => $data['address'],
             'email' => $data['email'],
-            'password' => $data['password'],
+            'password' => bcrypt($data['password'])
         ]);
     }
+
+    public function showRegistrationForm()
+    {
+        $data['pageName'] = "Register User";
+        $country = Country::all()->toArray();
+        $data['country'] = $country;
+        return view('register',$data);
+    }
+
+    public function getStates(Request $request)
+    {
+        $country_id = $request->country_id;
+        $state = State::where('country_id','=',$country_id)->get();
+        return response()->json($state);
+    }
+
+    public function getCities(Request $request)
+    {
+        $state_id = $request->state_id;
+        $city = City::where('state_id','=',$state_id)->get();
+
+        return response()->json($city);
+
+    }
+
 }
