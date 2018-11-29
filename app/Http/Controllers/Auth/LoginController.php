@@ -43,7 +43,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('login');
+        return view('admin.login.login');
     }
 
     public function doLogin(Request $request)
@@ -114,7 +114,7 @@ class LoginController extends Controller
                 // redirect them to the secure section or whatever
                 // return Redirect::to('secure');
                 // for now we'll just echo success (even though echoing in a controller is bad)
-                echo 'SUCCESS!';
+                return redirect()->intended('home');
 
             } else {
 

@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.front-app')
 <style class="cp-pen-styles">
     #carousel3d .carousel-3d-slide {
         display: -webkit-box;

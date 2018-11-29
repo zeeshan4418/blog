@@ -25,8 +25,10 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url("/login") }}">Login</a></li>
-                <li><a href="{{ url("/register") }}">Register</a></li>
+                {{--@if (Auth::guest())
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
+                @else--}}
                 <li><a href="{{ url('/messages') }}"><span class="fa fa-badge">Message</span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
@@ -34,6 +36,18 @@
                         <li><a href="{{url("/register")}}">Register</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{{ url("/user") }}">View</a></li>
+                    </ul>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
                     </ul>
                 </li>
             </ul>
